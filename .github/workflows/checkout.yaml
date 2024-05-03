@@ -24,4 +24,7 @@ jobs:
         run: |
           git clone "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
       - name: List Files After
-        run: ls -lsa
+        run: |
+          ls -lsa
+          ls -lsa $GITHUB_REPOSITORY || true
+          ls -lsa ghaCrashCourse  || true
