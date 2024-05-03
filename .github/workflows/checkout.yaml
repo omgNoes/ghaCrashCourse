@@ -26,5 +26,6 @@ jobs:
       - name: List Files After
         run: |
           ls -lsa
-          ls -lsa $GITHUB_REPOSITORY || true
           ls -lsa ghaCrashCourse  || true
+          ls -lsa $GITHUB_REPOSITORY || true
+          ls -lsa ${GITHUB_REPOSITORY##*/} || true
