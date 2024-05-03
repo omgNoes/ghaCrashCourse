@@ -29,3 +29,12 @@ jobs:
           ls -lsa ghaCrashCourse  || true
           ls -lsa $GITHUB_REPOSITORY || true
           ls -lsa ${GITHUB_REPOSITORY##*/} || true
+
+  checkout-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files Before
+        run: ls -lsa
+      - uses: actions/checkout@v3
+      - name: List Files After
+        run: ls -lsa
