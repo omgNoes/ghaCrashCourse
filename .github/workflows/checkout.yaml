@@ -15,3 +15,13 @@ jobs:
           git checkout main
       - name: List Files After
         run: ls -lsa
+  clone-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files Before
+        run: ls -lsa
+      - name: Checkout
+        run: |
+          git clone "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+      - name: List Files After
+        run: ls -lsa
