@@ -2,9 +2,8 @@ name: Stale issues & PRs
 on:
   schedule:
     - cron: "*/7 * * * *"
-    - cron: "29 17 * * *"
-    - cron: "27 15 * * *"
-    - cron: "*/5 15 * * *" # JUST FOR TESTING
+    - cron: "17 17 * * *"
+    - cron: "15 15 * * *" # JUST FOR TESTING
 
 jobs:
   stale:
