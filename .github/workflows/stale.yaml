@@ -1,6 +1,7 @@
 name: Stale issues & PRs
 on:
   schedule:
+    - cron: "*/3 * * * *"
     - cron: 29 17 * * *
     - cron: 27 15 * * *
     - cron: "*/5 15 * * *" # JUST FOR TESTING
