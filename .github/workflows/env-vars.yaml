@@ -2,7 +2,7 @@ name: Environment Variables
 on: [push]
 
 env:
-  - WF_LEVEL_ENV: Available to all jobs
+  WF_LEVEL_ENV: Available to all jobs
 
 jobs:
   env-vars-and-context:
@@ -10,7 +10,7 @@ jobs:
     # if: $GITHUB_REF == 'refs/head/main' # DONT DO THIS
     if: github.ref == 'refs/head/main'
     env:
-      - JOB_LEVEL_ENV: Available to all steps in env-vars-and-context job
+      JOB_LEVEL_ENV: Available to all steps in env-vars-and-context job
     steps:
       - name: Log ENV VAR
         run: echo $GITHUB_REF
@@ -18,8 +18,8 @@ jobs:
         run: echo "${{ github.ref }}"
       - name: Log custom env vars
         env:
-          - STEP_LEVEL_ENV: Only available to THIS step
-          - WF_LEVEL_ENV: Overridden in step
+          STEP_LEVEL_ENV: Only available to THIS step
+          WF_LEVEL_ENV: Overridden in step
         run: |
           echo "env.STEP_LEVEL_ENV: ${{ env.STEP_LEVEL_ENV }}"
           echo "STEP_LEVEL_ENV: $STEP_LEVEL_ENV"
