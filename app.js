@@ -1,5 +1,5 @@
 alert('omg')
+alert('123')
 alert('omg')
-alert('omg')
-alert('omg')
+alert('again')
 alert('omg')
