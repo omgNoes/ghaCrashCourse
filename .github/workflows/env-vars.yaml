@@ -33,7 +33,7 @@ jobs:
           DELIM
           EOF
           echo RANDOM_JOKE<<EOF >>"$GITHUB_ENV"
-          curl https://icanhazdadjoke.com/ >>"$GITHUB_ENV"
+          echo $(curl https://icanhazdadjoke.com/) >>"$GITHUB_ENV"
           echo EOF >>"$GITHUB_ENV"
       - name: Log custom ENV vars
         env:
