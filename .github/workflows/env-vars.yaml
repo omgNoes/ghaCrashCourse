@@ -35,7 +35,6 @@ jobs:
           echo "RANDOM_JOKE<<DELIM" >>"$GITHUB_ENV"
           curl -s https://icanhazdadjoke.com/ >>"$GITHUB_ENV"
           echo -e \\nDELIM >>"$GITHUB_ENV"
-          cat "$GITHUB_ENV"
       - name: Log custom ENV vars
         env:
           STEP_LEVEL_ENV: Only available to THIS step
