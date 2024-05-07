@@ -32,10 +32,9 @@ jobs:
            multiline variable.
           DELIM
           EOF
-
           echo "RANDOM_JOKE<<DELIM" >>"$GITHUB_ENV"
-          echo "$(curl -s https://icanhazdadjoke.com/)" >>"$GITHUB_ENV"
-          echo DELIM >>"$GITHUB_ENV"
+          curl -s https://icanhazdadjoke.com/ >>"$GITHUB_ENV"
+          echo -e \\nDELIM >>"$GITHUB_ENV"
           cat "$GITHUB_ENV"
       - name: Log custom ENV vars
         env:
