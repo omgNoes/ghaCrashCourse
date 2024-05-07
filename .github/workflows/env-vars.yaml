@@ -18,9 +18,17 @@ jobs:
         run: echo "${{ github.ref }}"
       - name: Set ENV vars
         run: |
-          echo "Appending ENV vars to $GUTHUB_ENV..."
+          echo "Appending ENV vars to $GITHUB_ENV..."
           echo "NEW_ENV_VAR=$(date)" >> "$GITHUB_ENV"
           echo "JOB_LEVEL_ENV=$RANDOM" >> "$GITHUB_ENV"
+      - name: Multiline ENV vars
+        run: |
+          echo MULTILINE_VAR<<EOF>> "$GITHUB_ENV"
+          echo This
+          echo is
+          echo a
+          echo multiline variable.
+          echo EOF
       - name: Log custom ENV vars
         env:
           STEP_LEVEL_ENV: Only available to THIS step
@@ -31,3 +39,4 @@ jobs:
           echo "WF_LEVEL_ENV: $WF_LEVEL_ENV"
           echo "JOB_LEVEL_ENV: $JOB_LEVEL_ENV"
           echo "NEW_ENV_VAR: $NEW_ENV_VAR"
+          echo "MULTILINE_VAR: $MULTILINE_VAR"
