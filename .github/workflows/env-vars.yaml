@@ -23,7 +23,7 @@ jobs:
           echo "JOB_LEVEL_ENV=$RANDOM" >> "$GITHUB_ENV"
       - name: Multiline ENV Var
         run: |
-          cat <<-EOF>>"$GITHUB_ENV"
+          cat <<-EOF >>"$GITHUB_ENV"
           MULTILINE_VAR<<DELIM
           This is a
            nested
@@ -33,9 +33,9 @@ jobs:
           DELIM
           EOF
 
-          echo "RANDOM_JOKE<<EOF" >>"$GITHUB_ENV"
+          echo "RANDOM_JOKE<<DELIM" >>"$GITHUB_ENV"
           echo "$(curl -s https://icanhazdadjoke.com/)" >>"$GITHUB_ENV"
-          echo EOF >>"$GITHUB_ENV"
+          echo DELIM >>"$GITHUB_ENV"
           cat "$GITHUB_ENV"
       - name: Log custom ENV vars
         env:
