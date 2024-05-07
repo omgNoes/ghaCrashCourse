@@ -25,10 +25,11 @@ jobs:
         run: |
           cat <<-EOF >> "$GITHUB_ENV"
           MULTILINE_VAR<<DELIM
-          This
-          is
-          a
-          multiline variable.
+          This is a
+           nested
+            multiline statement
+          defining a
+           multiline variable.
           DELIM
           EOF
       - name: Log custom ENV vars
