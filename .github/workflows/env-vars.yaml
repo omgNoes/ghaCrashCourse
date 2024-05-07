@@ -21,14 +21,14 @@ jobs:
           echo "Appending ENV vars to $GITHUB_ENV..."
           echo "NEW_ENV_VAR=$(date)" >> "$GITHUB_ENV"
           echo "JOB_LEVEL_ENV=$RANDOM" >> "$GITHUB_ENV"
-      - name: Multiline ENV vars
+      - name: Multiline ENV Var
         run: |
-          echo MULTILINE_VAR<<EOF>> "$GITHUB_ENV"
-          echo This
-          echo is
-          echo a
-          echo multiline variable.
-          echo EOF
+          cat <<-EOF >> "$GITHUB_ENV"
+          This
+          is
+          a
+          multiline variable.
+          EOF
       - name: Log custom ENV vars
         env:
           STEP_LEVEL_ENV: Only available to THIS step
