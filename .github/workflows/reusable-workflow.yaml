@@ -1,11 +1,6 @@
 name: Reusable Workflow
 on:
   workflow_call:
-    inputs:
-      name:
-        description: A name
-        type: string
-        required: true
     outputs:
       date:
         description: "Date Value"
@@ -15,7 +10,7 @@ jobs:
   nested-workflow-call:
     uses: omgNoes/workflows/.github/workflows/reusable.yaml@main
     with:
-      name: "${{ inputs.name }}"
+      name: "MY name!"
     secrets:
       access-token: ${{ secrets.ACCESS_TOKEN }}
 
