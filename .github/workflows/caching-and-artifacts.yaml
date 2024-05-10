@@ -12,7 +12,7 @@ jobs:
           path: ~/.npm
           key: "npm-cache"
       - name: Display Cache Output
-        run: echo '${{ toJson(steps.cache-dependencies.outputs.cache-cache-hit) }}'
+        run: echo '${{ toJson(steps.cache-dependencies.outputs) }}'
       - name: Install dependencies
         run: npm install
       - name: Use Axios
