@@ -1,6 +1,11 @@
 name: Reusable Workflow
 on:
   workflow_call:
+    inputs:
+      name:
+        description: A name
+        type: string
+        required: true
     outputs:
       date:
         description: "Date Value"
