@@ -12,6 +12,14 @@ jobs:
   calling-a-reusable-wf:
     uses: omgNoes/workflows/.github/workflows/reusable.yaml@main
     with:
-      name: '${{ inputs.name }}'
+      name: "${{ inputs.name }}"
     secrets:
       access-token: ${{ secrets.ACCESS_TOKEN }}
+
+  calling-a-reusable-wf-from-local-repo:
+    uses: ./.github/workflows/reusable-workflow.yaml
+  using-reusable-wf-output:
+    runs-on: ubuntu-latest
+    needs: calling-a-reusable-wf-from-local-repo
+    steps:
+      - run: echo "${{ needs.calling-a-reusable-wf-from-local-repo.outputs.date }}"
