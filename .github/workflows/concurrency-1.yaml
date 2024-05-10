@@ -9,7 +9,7 @@ on:
         type: environment
 
 concurrency:
-  group: ${{ inputs.environment }}
+  group: ${{ github.workflow }}-${{ inputs.environment }}
   cancel-in-progress: true
 jobs:
   sleep:
