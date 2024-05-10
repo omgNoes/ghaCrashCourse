@@ -15,8 +15,9 @@ jobs:
       name: "${{ inputs.name }}"
     secrets:
       access-token: ${{ secrets.ACCESS_TOKEN }}
-
   calling-a-reusable-wf-from-local-repo:
+    permissions:
+      issues: read
     uses: ./.github/workflows/reusable-workflow.yaml
     secrets: inherit
   using-reusable-wf-output:
