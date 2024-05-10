@@ -1,0 +1,17 @@
+{
+  "name": "ghacrashcourse",
+  "version": "1.0.0",
+  "description": "Monorepo for the Points Platform, contains API, CMS, Audiences and Frontend apps and services",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1"
+  }
+}
