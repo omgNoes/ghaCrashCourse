@@ -7,6 +7,13 @@ on:
         value: ${{ jobs.generate-output.outputs.date }}
 
 jobs:
+  nested-workflow-call:
+    uses: omgNoes/workflows/.github/workflows/reusable.yaml@main
+    with:
+      name: "${{ inputs.name }}"
+    secrets:
+      access-token: ${{ secrets.ACCESS_TOKEN }}
+
   generate-output:
     runs-on: ubuntu-latest
     outputs:
