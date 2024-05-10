@@ -34,12 +34,12 @@ jobs:
           entrypoint: /usr/local/bin/node
           args: -p 2+3
       - name: Log node version
-        uses: docker://node:latest
+        uses: docker://node:slim
         with:
           args: -v
 
       - name: Show file contents
-        uses: docker://node:latest
+        uses: docker://node:slim
         with:
           entrypoint: cat
           args: text.txt
