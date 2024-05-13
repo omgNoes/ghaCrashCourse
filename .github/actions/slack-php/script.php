@@ -2,8 +2,10 @@
 require_once 'vendor/rmccue/requests/src/Autoload.php';
 WpOrg\Requests\Autoload::register();
 
+echo "::group::Input args and env\n";
 var_dump($argv);
 var_dump($_ENV);
+echo "::endGroup::\n";
 
 echo "::debug::Sending a request to slack\n";
 
@@ -13,7 +15,6 @@ $response = WpOrg\Requests\Requests::post(
     'Content-Type' => 'application/json'
   ),
   json_encode(array(
-    // 'text' => 'Hello'
     'blocks' =>
     array(
       array(
@@ -28,19 +29,19 @@ $response = WpOrg\Requests\Requests::post(
         'fields' => array(
           array(
             'type' => 'mrkdwn',
-            'text' => '*Repository:*\n{$_ENV["GITHUB_REPOSITORY"]}',
+            'text' => "*Repository:*\n{$_ENV['GITHUB_REPOSITORY']}"
           ),
           array(
             'type' => 'mrkdwn',
-            'text' => '*Event:*\n{$_ENV["GITHUB_EVENT_NAME"]}'
+            'text' => "*Event:*\n{$_ENV['GITHUB_EVENT_NAME']}"
           ),
           array(
             'type' => 'mrkdwn',
-            'text' => '*Ref:*\n{$_ENV["GITHUB_REF"]}'
+            'text' => "*Ref:*\n{$_ENV['GITHUB_REF']}"
           ),
           array(
             'type' => 'mrkdwn',
-            'text' => '*SHA:*\n{$_ENV["GITHUB_SHA"]}'
+            'text' => "*SHA:*\n{$_ENV['GITHUB_SHA']}"
           ),
         )
       )
@@ -52,7 +53,7 @@ $response = WpOrg\Requests\Requests::post(
 
 // var_dump($response);
 echo "::group::Slack Response\n";
-echo $response->body."\n";
+echo $response->body . "\n";
 echo "::endGroup::\n";
 
 if (!$response->success) {
