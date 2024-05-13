@@ -50,10 +50,10 @@ $response = WpOrg\Requests\Requests::post(
   ))
 
 );
+echo "$reponse\n";
 
-// var_dump($response);
 echo "::group::Slack Response\n";
-echo $response;
+var_dump($response);
 echo "::endGroup::\n";
 
 if (!$response->success) {
