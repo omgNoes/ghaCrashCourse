@@ -3,6 +3,7 @@ on: [push]
 
 jobs:
   simple-action:
+    if: failure()
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +21,7 @@ jobs:
         run: echo "HELLO_TIME = $HELLO_TIME"
 
   composite-action:
+    if: failure()
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,8 +29,19 @@ jobs:
         uses: ./.github/actions/slack-joke
         id: slack-joke
         with:
-          # slack_username: Rambam
-          # upload_joke: true
+          slack_username: Rambam
+          upload_joke: true
           slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
       - name: Displaying joke output
         run: echo "${{ steps.slack-joke.outputs.joke }}"
+
+  elaborate-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Send a Slack Message
+        uses: ./.github/actions/slack-php
+        id: slack-php
+        with:
+          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+          message: Hello there from PHP
