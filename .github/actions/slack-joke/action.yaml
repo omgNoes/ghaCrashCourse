@@ -26,6 +26,7 @@ runs:
         echo "random_joke<<$EOF" >>"$GITHUB_OUTPUT"
         echo $(curl -s https://icanhazdadjoke.com/) >>"$GITHUB_OUTPUT"
         echo "$EOF" >>"$GITHUB_OUTPUT"
+        cat "$GITHUB_OUTPUT"
     - name: Generate Joke File
       shell: bash
       run: echo '${{ steps.joke.outputs.random_joke }}' > joke.txt
