@@ -53,7 +53,7 @@ $response = WpOrg\Requests\Requests::post(
 
 // var_dump($response);
 echo "::group::Slack Response\n";
-echo $response->body . "\n";
+echo $response;
 echo "::endGroup::\n";
 
 if (!$response->success) {
