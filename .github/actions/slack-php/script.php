@@ -50,7 +50,6 @@ $response = WpOrg\Requests\Requests::post(
   ))
 
 );
-echo "$reponse\n";
 
 echo "::group::Slack Response\n";
 var_dump($response);
