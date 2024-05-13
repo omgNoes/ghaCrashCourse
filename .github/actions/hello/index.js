@@ -15,7 +15,7 @@ try {
   core.setOutput("time", time.toTimeString());
 
   if (time.getMinutes() % 2 === 0) {
-    throw new Error("Some annoying error message");
+    throw new Error("Throw this error on even minutes");
   }
   core.exportVariable("HELLO_TIME", time);
 
