@@ -25,7 +25,7 @@ runs:
         EOF=$(dd if=/dev/urandom bs=15 count=1 status=none|base64)
         echo "random_joke<<$EOF" >>"$GITHUB_OUTPUT"
         curl -s https://icanhazdadjoke.com/ >>"$GITHUB_OUTPUT"
-        echo -e \\$EOF >>"$GITHUB_OUTPUT"
+        echo -e \\n$EOF >>"$GITHUB_OUTPUT"
     - name: Generate Joke File
       shell: bash
       run: echo '${{ steps.joke.outputs.random_joke }}' > joke.txt
