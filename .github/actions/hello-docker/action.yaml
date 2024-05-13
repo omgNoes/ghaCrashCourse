@@ -1,18 +1,21 @@
-name: Hello World
+name: Hello World from Docker
 author: Ramses
 description: "Greet someone and record the time"
 inputs:
   whom_to_greet:
     description: "Whom to greet"
-    required: true
     default: "World"
 outputs:
   time:
     description: The time of the greeting
 runs:
-  using: "node20"
-  main: dist/index.js
-  pre: setup.js
-  pre-if: runner.os == 'linux'
-  post: cleanup.js
+  using: "docker"
+  # image: 'docker://node:18.16-alpine3.17'
+  image: "Dockerfile"
+  # entrypoint:
+  args:
+    - ${{ inputs.whom_to_greet}}
+  env:
+    HELLO: WORLD
+  post-entrypoint: /cleanup.sh
   post-if: runner.os == 'linux'
