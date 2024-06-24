@@ -1,6 +1,6 @@
 {
   "name": "ghacrashcourse",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Monorepo for the Points Platform, contains API, CMS, Audiences and Frontend apps and services",
   "main": "app.js",
   "scripts": {
