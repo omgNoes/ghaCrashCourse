@@ -5,3 +5,4 @@ Monorepo for the Points Platform, contains API, CMS, Audiences and Frontend apps
 New features appeared! (tm)
 
 - new feature A
+- feat D was added
