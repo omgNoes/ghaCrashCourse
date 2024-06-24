@@ -1,0 +1,19 @@
+name: main branch pushes
+on:
+  push:
+    branches: main
+
+jobs:
+  simple-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Simple JS Action
+        id: greet
+        uses: ./.github/actions/hello-docker
+        with:
+          whom_to_greet: Rambam
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.outputs.time }}"
+      - name: Log ENV Var
+        run: echo "Greetings from PUSH-MAIN, running at HELLO_TIME = $HELLO_TIME"
