@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/omgNoes/ghaCrashCourse/compare/v1.2.4...v1.3.0) (2025-03-27)
+
+
+### Features
+
+* first signed commit ([04e566b](https://github.com/omgNoes/ghaCrashCourse/commit/04e566b6f63c9cea70537bb5939afd5376a77cdd))
+
+
+### Bug Fixes
+
+* commit signing using ssh key ([#21](https://github.com/omgNoes/ghaCrashCourse/issues/21)) ([713b9aa](https://github.com/omgNoes/ghaCrashCourse/commit/713b9aa2dafe3e7722f01a563bc854a9d38b0690))
+
 ## [1.2.4](https://github.com/omgNoes/ghaCrashCourse/compare/v1.0.0...v1.2.4) (2024-06-24)
 
 
