@@ -1,5 +1,5 @@
-# BREAKING NEWS!
-Git commit signing introduced!
+# MORE BREAKING NEWS!
+Git commit signing introduced and now using SSH keys!!!
 
 # platform
 Monorepo for the Points Platform, contains API, CMS, Audiences and Frontend apps and services
