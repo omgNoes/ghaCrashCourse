@@ -1,23 +1,11 @@
-# Feature A
 
-## Dit is feature A
-
-Er zal een feature hiervan afhankelijk worden en regels onderaan deze tekst toevoegen...
-
-Hieronder dus, tussen de lijntjes.
-
-========
-
-## Dit is feature B
+# Dit is feature B
 
 Deze tekst beschrijft feature B. Deze is afhankelijk van feature A, en zal dus NIET gemerged kunnen worden zonder feature A.
 Het is aan de GH PR webUI om duidelijk aan te geven hoe de vok in de steel zit, wat de procedures worden en wat voor consequanties dit heeft.
 
-Zie de [uitvoeriger beschrijving](FEATURE%20B.md) voor meer uitleg.
+Deze file is NIET afhankelijk van feature A.
+De referentie in [FEATURE A.md](FEATURE%20A.md) is dat wél.
 
-\o/
+Ben benieuwd!
 Ramses.
-
-========
-
-RR.
